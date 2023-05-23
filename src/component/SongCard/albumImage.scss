@@ -1,0 +1,22 @@
+.albumImage{
+    width: 70%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+img{
+    border-radius: 30px;
+    width: 100%;
+    aspect-ratio: 1;
+}
+.albmumImagrShadow{
+    // width: 90%;
+    -webkit-filter: blur(10px);
+    filter: blur(10px);
+    position: absolute;
+    z-index: -1;
+    top: 20px;
+}

@@ -1,0 +1,57 @@
+.queueCont {
+    width: 100%;
+    height: 38%;
+    border-radius: 30px;
+    border-top-right-radius: 0px;
+    background-color: #e5e5f7;
+    opacity: 1;
+    background-image: repeating-radial-gradient(circle at 0 0, transparent 0, #7391f1 40px), repeating-linear-gradient(rgb(202 205 255 / 33%), #a9ace9);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.queue {
+    height: 85%;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 88%;
+}
+
+.upNext {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    text-align: left;
+    // width: 100%;
+    margin: 10px 0px;
+}
+
+.queueList {
+    height: 80%;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.queueList::-webkit-scrollbar {
+    // width: 0.5em;
+    display: none;
+}
+
+.queueItem {
+    width: 100%;
+    justify-content: space-between;
+    padding: 5px 8px;
+    font-weight: 500;
+    font-size: 14px;
+    column-rule: #fff;
+    cursor: pointer;
+    transition: all 0,2s ease;
+}
+.queueItem:hover{
+    transform: scale(0.95);
+}
+.trackName {
+    width: 75%;
+    text-overflow: ellipsis;
+}
