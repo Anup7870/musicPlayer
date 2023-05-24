@@ -29,7 +29,7 @@ export default function Home() {
     
   },[]);
   return (!token ? (<Login />) : (
-    <BrowserRouter basename='.'>
+    <BrowserRouter basename='/'>
       <div className="mianBoady">
         <Sidebar />
         <Routes>
