@@ -26,7 +26,7 @@ export default function AudioPlayer({
     const { duration } = audioRef.current;
     const currentPer = duration?(trackProgress/duration)*100:0 ;
 
-    console.log(currentPer);
+    // console.log(currentPer);
 
     const startTimer = () =>{
         clearInterval(intervalRef.current);
@@ -109,7 +109,7 @@ export default function AudioPlayer({
                 <p className='songArtist'>{artists.join(" | ")}</p>
                 <div className='playerRightBotton'>
                     <div className='songDuration'>
-                        <p className='duration'>0:01</p>
+                        <p className='duration'>{Math.round(trackProgress)}</p>
                         <WaveAnimation isPlaying={true} />
                         <p className='duration'>0:30</p>
                     </div>
