@@ -29,7 +29,7 @@ export default function Home() {
     
   },[]);
   return (!token ? (<Login />) : (
-    <BrowserRouter basename='/musicPlayer'>
+    <BrowserRouter basename='.'>
       <div className="mianBoady">
         <Sidebar />
         <Routes>
