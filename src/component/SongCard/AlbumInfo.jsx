@@ -1,5 +1,5 @@
 import React from "react";
-import "./albuminfo.scss";
+import "./albumInfo.scss";
 export default function AlbumInfo({ album }) {
   const artistsA = [];
   album?.artists.forEach((element) => {
