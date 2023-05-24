@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./Sidebar.scss";
+import "./sidebar.scss";
 import SidebarButton from "../sideBarButton/SidebarButton";
 // icons
 import { MdFavorite } from "react-icons/md";
