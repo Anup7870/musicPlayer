@@ -26,7 +26,7 @@ export default function Player() {
 
     useEffect(() => {
         setCurrentTack(tracks[currentIndex]?.track);
-    }, [currentIndex, tracks]);
+    },[] ,[currentIndex, tracks]);
 
     return (
         <div className='screenContainer flex'>

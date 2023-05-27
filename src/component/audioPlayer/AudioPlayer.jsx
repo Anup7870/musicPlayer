@@ -25,8 +25,8 @@ export default function AudioPlayer({
 
     const { duration } = audioRef.current;
     const currentPer = duration?(trackProgress/duration)*100:0 ;
-
-    // console.log(currentPer);
+    // console.log(audioRef);
+    console.log(currentPer);
 
     const startTimer = () =>{
         clearInterval(intervalRef.current);
@@ -36,6 +36,7 @@ export default function AudioPlayer({
                 handleNext();
             }
             else{
+                console.log(audioRef.current.currentIndex)
                 setTrackProgress(audioRef.current.currentIndex);
             }
         },[1000])
