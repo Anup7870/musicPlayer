@@ -24,74 +24,74 @@ export default function AudioPlayer({
     const isReady = useRef(false);
 
     const { duration } = audioRef.current;
-    const currentPer = duration?(trackProgress/duration)*100:0 ;
+    const currentPer = duration ? (trackProgress / duration) * 100 : 0;
     // console.log(audioRef);
     console.log(currentPer);
 
-    const startTimer = () =>{
+    const startTimer = () => {
         clearInterval(intervalRef.current);
 
-        intervalRef.current = setInterval(()=>{
-            if(audioRef.current.ended){
+        intervalRef.current = setInterval(() => {
+            if (audioRef.current.ended) {
                 handleNext();
             }
-            else{
+            else {
                 console.log(audioRef.current.currentIndex)
                 setTrackProgress(audioRef.current.currentIndex);
             }
-        },[1000])
+        }, [1000])
     }
-    
 
-    useEffect(()=>{
-        if(isPlaying&&audioRef.current){
+
+    useEffect(() => {
+        if (isPlaying && audioRef.current) {
             audioRef.current = new Audio(audioSource);
             audioRef.current.play();
             startTimer();
         }
-        else{
+        else {
             clearInterval(intervalRef.current);
             audioRef.current.pause();
         }
-    },[isPlaying])
+    }, [isPlaying])
 
-    useEffect(()=>{
+    useEffect(() => {
         audioRef.current.pause();
         audioRef.current = new Audio(audioSource);
         setTrackProgress(audioRef.current.currentTime);
-        if(isReady.current){
+        if (isReady.current) {
             audioRef.current.play();
             setIsPlaying(true);
             startTimer();
         }
-        else{
-            isReady.current=true;
+        else {
+            isReady.current = true;
         }
-       
-    },[currentIndex])
 
-    useEffect(()=>{
-        return()=>{
+    }, [currentIndex])
+
+    useEffect(() => {
+        return () => {
             audioRef.current.pause();
             clearInterval(intervalRef.current);
         }
-    },[])
+    }, [])
 
     // handling button
-    const handleNext = () =>{
-        if(currentIndex<total.length-1){
-            setCurrentIndex(currentIndex+1)
+    const handleNext = () => {
+        if (currentIndex < total.length - 1) {
+            setCurrentIndex(currentIndex + 1)
         }
         else {
             setCurrentIndex(0)
         }
     }
-    const handlePrev = () =>{
-        if(currentIndex-1<0){
-            setCurrentIndex(total-1)
+    const handlePrev = () => {
+        if (currentIndex - 1 < 0) {
+            setCurrentIndex(total - 1)
         }
-        else{
-            setCurrentIndex(currentIndex-1);
+        else {
+            setCurrentIndex(currentIndex - 1);
         }
     }
     return (

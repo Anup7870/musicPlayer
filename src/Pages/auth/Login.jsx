@@ -1,13 +1,17 @@
-import React from 'react'
-import { loginEndpoint } from '../../spotify'
-
+import React, { useEffect, useState } from "react";
+import { loginEndpoint } from "../../spotify";
+import "./auth.scss";
 export default function Login() {
   return (
-    <div className="loginPage">
-      {/* <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzmKX38PSi9J3Pi2eYrE-RIyMugwmOjjYhgwU3SJCaeL69T5S1JAT4jk_I1d3-pYjtyQ&usqp=CAU" alt="" srcset="" /> */}
-    < a href={loginEndpoint}>
-    <div className="loginBtn">Log In</div>
-      </a> 
-    </div>
-  )
+    <>
+      <div className='Loginconatiner'>
+        <div className='itemBox'>
+          <img src='src/assets/images.png' alt='' srcset='' />
+          <a href={loginEndpoint}>
+            <div className='buttonLogin'>Connect to Spotify</div>
+          </a>
+        </div>
+      </div>
+    </>
+  );
 }
